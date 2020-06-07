@@ -37,7 +37,8 @@ form {
     margin: 0 30px
 }
 
-.goto-register {
+.goto-register,
+.goto-login {
     float: right;
 }
 

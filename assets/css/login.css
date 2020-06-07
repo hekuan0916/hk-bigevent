@@ -5,6 +5,52 @@ body {
 }
 
 body {
-    background-image: url("/assets/images/login_bg.jpg") no-repeat;
+    background: url("../images/login_bg.jpg") no-repeat;
     background-size: cover;
+}
+
+.logo {
+    margin: 20px 50px 0 50px
+}
+
+.login,
+.register {
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.register {
+    display: none;
+}
+
+.title {
+    height: 50px;
+    background: url("/assets/images/login_title.png") no-repeat center;
+}
+
+form {
+    margin: 0 30px
+}
+
+.goto-register {
+    float: right;
+}
+
+.layui-form-item {
+    position: relative;
+}
+
+.layui-icon {
+    position: absolute;
+    top: 12px;
+    left: 10px
+}
+
+.layui-input {
+    padding-left: 30px;
 }

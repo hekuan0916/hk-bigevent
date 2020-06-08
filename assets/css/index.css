@@ -1,0 +1,30 @@
+/* 调整字体图标 */
+.layui-icon {
+    font-size: 20px;
+    margin-right: 10px;
+    color: hotpink;
+}
+
+.layui-nav-child a {
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.userInfo {
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+}
+
+.text-icon {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #009688;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    display: none;
+    margin-right: 5px;
+}

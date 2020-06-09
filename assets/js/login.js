@@ -40,8 +40,8 @@ $(function () {
     },
 
     same: function (val) {
-      var password = $(".register .pass").val();
-      if (val !== password) {
+      var passWord = $("#pass").val();
+      if (val !== passWord) {
         return "两次密码不一致";
       }
     },

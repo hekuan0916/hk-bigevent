@@ -35,12 +35,12 @@ $(function () {
     // len: [/^[\S]{6,12}$/, "密码长度不对"],
     len: function (val) {
       if (val.trim().length < 6 || val.trim().length > 12) {
-        return " 密码长度必须是6~12位";
+        return "密码长度必须是6~12位";
       }
     },
 
     same: function (val) {
-      var passWord = $("#pass").val();
+      var passWord = $(".pass").val();
       if (val !== passWord) {
         return "两次密码不一致";
       }
@@ -60,8 +60,8 @@ $(function () {
         layer.msg(res.message);
         // alert(res.message)
         if (res.status === 0) {
-          location.href = "/index.html";
           localStorage.setItem("token", res.token);
+          location.href = "/index.html";
         }
       },
     });

@@ -4,7 +4,7 @@ $(function () {
     //退出功能
     $('.logout').click(function () {
 
-        layer.confirm('你确定退出吗?'), {
+        layer.confirm('你确定退出吗?', {
                 icon: 3,
                 title: '提示'
             },
@@ -12,7 +12,7 @@ $(function () {
                 localStorage.removeItem('token')
                 location.href = '/login.html'
                 layer.close(index)
-            }
+            })
     })
 });
 
@@ -31,7 +31,7 @@ function getUserInfo() {
                 } else {
                     var t = myname.substr(0, 1).toUpperCase();
 
-                    $(".text-Icon").text(t).css("display", "inline-block");
+                    $(".text-Icon").text(t).css("display", "inline-block")
 
                     $(".layui-nac-img").hide();
                 }
@@ -39,16 +39,18 @@ function getUserInfo() {
         },
 
         complete: function (xhr) {
-
-            if (xhr.responseJSON.status === 1) {
-
-                localStorage.removeItem('token')
-
-                location.href = '/login.html'
+            // 这里判断身份认证是否成功
+            // console.log(xhr);
+            if (xhr.responseJSON.status === 1 && xhr.responseJSON.message === '身份认证失败！') {
+                // 删除假token
+                localStorage.removeItem('token');
+                // 跳转到登录页面
+                location.href = '/login.html';
             }
         },
+        // jQuery中ajax选项，有一个headers，通过他，可以设置请求头
         headers: {
-            'Authorization': localStorage.getItem('token'),
-        },
+            'Authorization': localStorage.getItem('token')
+        }
     });
 }
